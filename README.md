@@ -2,7 +2,7 @@ Tappay Push Token Sample
 ==========================
 
   - [Flow](#flow)
-  - [Introduction](#introduction)
+  - [Flow description](#flow-description)
   - [Getting Started](#getting-started)
 <br>
 <br>
