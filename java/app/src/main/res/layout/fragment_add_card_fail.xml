@@ -8,9 +8,9 @@
     <ImageButton
         android:id="@+id/back_to_login_btn"
         android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_marginLeft="3dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:src="@drawable/ic_back_to_login"
         android:background="@null">
     </ImageButton>
@@ -19,7 +19,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/success"
+        android:src="@drawable/failed"
         android:layout_gravity="center_horizontal"
         ></ImageView>
 
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:layout_gravity="center_horizontal"
-        android:text="@string/bind_card_success"
+        android:text="@string/bind_card_fail"
         android:textStyle="bold"></TextView>
 
     <LinearLayout
@@ -63,5 +63,4 @@
         </TextView>
 
     </ScrollView>
-
 </LinearLayout>
