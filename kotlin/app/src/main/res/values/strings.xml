@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">TappayTokenPush</string>
 
-    <string name="partner_key"></string>
-    <string name="token_push_url">https://prod.tappaysdk.com/tpc/tsp/token/push-tokenize</string>
+    <!-- sandbox -->
+    <string name="sandbox_partner_key"></string>
+    <string name="sandbox_token_push_url">https://sandbox.tappaysdk.com/tpc/tsp/token/push-tokenize</string>
+    <!-- prod -->
+    <string name="prod_partner_key"></string>
+    <string name="prod_token_push_url">https://prod.tappaysdk.com/tpc/tsp/token/push-tokenize</string>
 
     <string name="terms_title">Conditions &#38; Terms</string>
     <string name="terms">This Privacy Policy is meant to help you understand what information we collect, why we collect it, and how you can update, manage, export, and delete your information."\n" Subject to the terms and conditions of the Agreement, [Merchant Name] grants to Licensee a non-exclusive, non-transferable license to use the software identified in Exhibit A (the "Licensed Programs") for the purpose of [xxxxxxxxxxxxxxxxxxxxxxxx].

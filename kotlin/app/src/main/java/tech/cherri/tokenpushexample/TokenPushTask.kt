@@ -4,6 +4,7 @@ import android.os.AsyncTask
 import android.util.Log
 import org.json.JSONException
 import org.json.JSONObject
+import tech.cherri.tokenpushexample.enumeration.Env
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
@@ -14,8 +15,9 @@ import java.net.URL
 class TokenPushTask(private val tokenPushParam: TokenPushParam) :
     AsyncTask<String?, Void?, JSONObject>() {
     private val jsonRequest: JSONObject
-    private val partnerKey: String
-    private val targetUrl: String
+    private var partnerKey: String = ""
+    private var env: Env
+    private var targetUrl: String = ""
 
     override fun doInBackground(vararg p0: String?): JSONObject {
         var outputJSONObj = JSONObject()
@@ -88,9 +90,24 @@ class TokenPushTask(private val tokenPushParam: TokenPushParam) :
         private val TAG = TokenPushTask::class.java.simpleName
     }
 
+    private fun preparePartnerKey(){
+        when (env) {
+            Env.Sandbox -> partnerKey = tokenPushParam.context!!.getString(R.string.sandbox_partner_key)
+            Env.Prod -> partnerKey = tokenPushParam.context!!.getString(R.string.prod_partner_key)
+        }
+    }
+
+    private fun prepareTargetUrl(){
+        when (env) {
+            Env.Sandbox -> targetUrl = tokenPushParam.context!!.getString(R.string.sandbox_token_push_url)
+            Env.Prod -> targetUrl = tokenPushParam.context!!.getString(R.string.prod_token_push_url)
+        }
+    }
+
     init {
-        partnerKey = tokenPushParam.context!!.getString(R.string.partner_key)
-        targetUrl = tokenPushParam.context!!.getString(R.string.token_push_url)
+        env = Env.Sandbox
+        preparePartnerKey()
+        prepareTargetUrl()
         jsonRequest = JSONObject()
         try {
             jsonRequest.put("partner_key", partnerKey)

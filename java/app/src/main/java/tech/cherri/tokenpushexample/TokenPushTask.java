@@ -15,17 +15,21 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import tech.cherri.tokenpushexample.enumeration.Env;
+
 public class TokenPushTask extends AsyncTask<String, Void, JSONObject> {
     private static final String TAG = TokenPushTask.class.getSimpleName();
     private JSONObject jsonRequest;
     private String partnerKey;
     private String targetUrl;
+    private Env env;
     private TokenPushParam tokenPushParam;
 
     public TokenPushTask(TokenPushParam tokenPushParam) {
         this.tokenPushParam = tokenPushParam;
-        partnerKey = tokenPushParam.getContext().getString(R.string.partner_key);
-        targetUrl = tokenPushParam.getContext().getString(R.string.token_push_url);
+        env = Env.Sandbox;
+        preparePartnerKey();
+        prepareTargetUrl();
         jsonRequest = new JSONObject();
         try {
             jsonRequest.put("partner_key", partnerKey);
@@ -105,5 +109,27 @@ public class TokenPushTask extends AsyncTask<String, Void, JSONObject> {
         }
         br.close();
         return responseStr.toString();
+    }
+
+    private void preparePartnerKey(){
+        switch (env){
+            case Sandbox:
+                partnerKey = tokenPushParam.getContext().getString(R.string.sandbox_partner_key);
+                break;
+            case Prod:
+                partnerKey = tokenPushParam.getContext().getString(R.string.prod_partner_key);
+                break;
+        }
+    }
+
+    private void prepareTargetUrl(){
+        switch (env){
+            case Sandbox:
+                targetUrl = tokenPushParam.getContext().getString(R.string.sandbox_token_push_url);
+                break;
+            case Prod:
+                targetUrl = tokenPushParam.getContext().getString(R.string.prod_token_push_url);
+                break;
+        }
     }
 }

@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import org.json.JSONObject
@@ -39,7 +40,7 @@ class AddCardSuccessFragment : Fragment() {
             )
             fragmentTransaction.commit()
         })
-        var backToBankBtn: ImageButton = view.findViewById(R.id.back_to_bank_button)
+        var backToBankBtn: Button = view.findViewById(R.id.back_to_bank_button)
         var resultTextView: TextView = view.findViewById<TextView>(R.id.result)
         resultTextView.setText(JSONUtils.pretty(jSONObjectResult.toString()))
         if (jSONObjectResult?.optString(Constants.RESPONSE_CALLBACK_URL_KEY) != null && jSONObjectResult?.optString(
