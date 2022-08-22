@@ -37,6 +37,7 @@ Setup App schema in AndroidManifest.xml
             <action android:name="android.intent.action.VIEW" />
             <category android:name="android.intent.category.DEFAULT" />
             <category android:name="android.intent.category.BROWSABLE" >
+            <!-- please custom your app schema here-->
             <data
                 android:host="mock.merchant.app"
                 android:scheme="cherri" />
@@ -52,9 +53,11 @@ Fill in partner_key in string.xml
 ```
 <br>
 
-TokenPushTask.java will show you how to send a HTTP POST request to TapPay 
+TokenPushTask will show you how to send a HTTP POST request to TapPay 
 
 ```java
+//change env to Prod if you has passed your test case in sandbox
+env = Env.Sandbox;
 
 ...
 
