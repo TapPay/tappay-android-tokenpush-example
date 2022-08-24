@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">TappayTokenPush</string>
+
+    <!-- sandbox -->
+    <string name="sandbox_partner_key"></string>
+    <string name="sandbox_token_push_url">https://sandbox.tappaysdk.com/tpc/tsp/token/push-tokenize</string>
+    <!-- prod -->
+    <string name="prod_partner_key"></string>
+    <string name="prod_token_push_url">https://prod.tappaysdk.com/tpc/tsp/token/push-tokenize</string>
+
+    <string name="terms_title">Conditions &#38; Terms</string>
+    <string name="terms">This Privacy Policy is meant to help you understand what information we collect, why we collect it, and how you can update, manage, export, and delete your information."\n" Subject to the terms and conditions of the Agreement, [Merchant Name] grants to Licensee a non-exclusive, non-transferable license to use the software identified in Exhibit A (the "Licensed Programs") for the purpose of [xxxxxxxxxxxxxxxxxxxxxxxx].
+    </string>
+
+    <string name="terms_agree_hint">&#183; If you agree to execute Push Tokenize, click &quot;Agree &#38; Continue&quot; button</string>
+    <string name="terms_cancel_hint">&#183; If you want to cancel the job, click &quot;Cancel&quot; button</string>
+    <string name="terms_agree_policy">I agreed the policy 《XXXXXXXXXXXX 服務協議》《隱私權政策》</string>
+
+    <string name="cancel_btn_text">Cancel</string>
+    <string name="not_agree_btn_text">Not Agree</string>
+    <string name="agree_btn_text">Agree &#38; Continue</string>
+
+    <string name="bind_card_success">Add Card Success</string>
+    <string name="bind_card_fail">Add Card Fail</string>
+    <string name="go_shopping">Go Shopping</string>
+    <string name="back_to_bank">Back to Bank</string>
+
+    <string name="cancel_bind_card_title">Cancel Success</string>
+
+    <string name="login">Login</string>
+    <string name="account">Account</string>
+    <string name="password">Password</string>
+</resources>
